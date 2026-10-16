@@ -1,25 +1,25 @@
-# History
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
 setopt SHARE_HISTORY
+setopt APPEND_HISTORY
 setopt EXTENDED_HISTORY
 
-# Starship custom prompt
-command -v starship &> /dev/null && eval "$(starship init zsh)"
+# starship
+eval "$(starship init zsh)"
 
-# Direnv
+# direnv
 command -v direnv &> /dev/null && eval "$(direnv hook zsh)"
 
-# Zoxide
+# zoxide
 command -v zoxide &> /dev/null && eval "$(zoxide init zsh --cmd cd)"
 
 # Better ls
 command -v eza &> /dev/null && alias ls='eza --icons --group-directories-first -1'
 
-# Aliases
+# alias
 alias lg='lazygit'
 alias gd='git diff'
 alias ga='git add .'
@@ -41,7 +41,7 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 
-# Custom colours
+# color scheme
 cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
 
 # zsh-autosuggestions
