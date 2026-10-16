@@ -189,7 +189,7 @@ CLI 的配置文件（`~/.config/caelestia/cli.json`）可用来调整 CLI 的�
 | ---------------- | ------------------------------- |
 | `Super + T`      | 终端（默认：kitty）              |
 | `Super + W`      | 浏览器（默认：google-chrome-stable） |
-| `Super + C`      | 编辑器（默认：zed）             |
+| `Super + C`      | 编辑器（默认：zeditor）         |
 | `Super + E`      | 文件管理器（默认：thunar）      |
 | `Ctrl + Alt + V` | 音频设置（默认：pwvucontrol）   |
 
