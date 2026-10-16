@@ -188,7 +188,7 @@ CLI 的配置文件（`~/.config/caelestia/cli.json`）可用来调整 CLI 的�
 
 | 快捷键           | 功能                            |
 | ---------------- | ------------------------------- |
-| `Super + T`      | 终端（默认：foot）              |
+| `Super + T`      | 终端（默认：kitty）              |
 | `Super + W`      | 浏览器（默认：firefox）         |
 | `Super + C`      | 编辑器（默认：codium）          |
 | `Super + E`      | 文件管理器（默认：thunar）      |

@@ -25,8 +25,8 @@ jobs:
             fastfetch
             firefox
             fish
-            foot
             hypr
+            kitty
             micro
             spicetify
             starship
