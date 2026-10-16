@@ -2,10 +2,10 @@
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
-	<name>Open Terminal Here</name>
+	<name>在 Kitty 中打开</name>
 	<submenu></submenu>
 	<unique-id>1710575157271461-1</unique-id>
-	<command>kitty --directory %f</command>
+	<command>kitty --directory %F</command>
 	<description>Open the current directory in kitty</description>
 	<range></range>
 	<patterns>*</patterns>

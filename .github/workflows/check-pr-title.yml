@@ -22,8 +22,8 @@ jobs:
         with:
           scopes: |
             btop
+            chrome
             fastfetch
-            firefox
             fish
             hypr
             kitty
@@ -34,7 +34,6 @@ jobs:
             uwsm
             vscode
             zed
-            zen
 
             manifest
             packages

@@ -74,7 +74,7 @@ cp -r hypr/. $XDG_CONFIG_HOME/hypr/
 ```lua
 return {
   -- 修改默认应用：
-  browser          = "zen-browser",    -- 将默认浏览器改为 Zen
+  browser          = "chromium",       -- 将默认浏览器改为 Chromium
   editor           = "code",           -- 将默认编辑器改为 Code
 
   -- 修改窗口/装饰属性：
@@ -189,7 +189,7 @@ CLI 的配置文件（`~/.config/caelestia/cli.json`）可用来调整 CLI 的�
 | 快捷键           | 功能                            |
 | ---------------- | ------------------------------- |
 | `Super + T`      | 终端（默认：kitty）              |
-| `Super + W`      | 浏览器（默认：firefox）         |
+| `Super + W`      | 浏览器（默认：google-chrome-stable） |
 | `Super + C`      | 编辑器（默认：codium）          |
 | `Super + E`      | 文件管理器（默认：thunar）      |
 | `Ctrl + Alt + V` | 音频设置（默认：pwvucontrol）   |
