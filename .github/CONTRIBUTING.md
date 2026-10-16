@@ -1,21 +1,21 @@
-# Contributing
+# 贡献指南
 
-There are only a few rules:
-- Follow the commit convention as follows:
-  - The name of the commit should be `module: change`
-  - Try to be consistent with the module names; you can look at existing commits for the module names I use
-  - If there is more than one change, the change in the commit name should be the most impactful change
-  - Put other changes in the description
-- Format your code
-  - I use the vscode qml extension with default arguments to format the code, however you do not have to use it
-  - Just try to follow the code style of the rest of the code and ensure that there is:
-    - no trailing whitespace on any lines
-    - a single space between operators
-- No AI slop allowed
-  - AI readme/docs slop = instant block
-- PLEASE TEST YOUR PRS
-  - I can't believe I have to put this here, but please test your PRs before submitting them
-  - Your PR must not break anything currently existing, or specify in the description if it does
-- PR descriptions should be descriptive
-  - Please explain what the PR does and how to use it in your PR description
-  - Also include any breaking changes and/or side effects of the PR
+只有几条规则：
+- 遵循以下提交约定：
+  - 提交信息应为 `模块: 改动` 的格式
+  - 模块命名尽量保持一致；可以参考现有提交中使用的模块名
+  - 如果一次提交包含多处改动，提交标题中应写影响最大的那一处改动
+  - 其余改动写在提交描述中
+- 格式化你的代码
+  - 我使用 vscode 的 qml 扩展（默认参数）来格式化代码，但你不必非用它不可
+  - 尽量遵循其余代码的风格，并确保：
+    - 任何行末都不得有多余空白
+    - 运算符两侧各留一个空格
+- 禁止 AI 生成的垃圾内容
+  - AI 生成的 readme/文档垃圾 = 直接拉黑
+- 请务必测试你的 PR
+  - 没想到我必须把这条写在这里，但请在提交 PR 之前先自行测试
+  - 你的 PR 不得破坏任何现有功能，如果有，请在描述中说明
+- PR 描述应当具体
+  - 请在 PR 描述中说明这个 PR 做了什么、该如何使用
+  - 同时说明任何破坏性变更和/或副作用
