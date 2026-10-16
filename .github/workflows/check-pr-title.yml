@@ -31,7 +31,6 @@ jobs:
             starship
             thunar
             uwsm
-            vscode
             zed
             zsh
 

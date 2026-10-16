@@ -175,38 +175,6 @@ src = "spicetify"
 dest = "$XDG_CONFIG_HOME/spicetify"
 
 [[components]]
-name = "vscodium"
-packages = ["vscodium-bin", "vscodium-bin-marketplace"]
-post_install = [
-    "codium --install-extension $CAELESTIA_DOTS/vscode/caelestia-vscode-integration/caelestia-vscode-integration-*.vsix",
-]
-[[components.entries]]
-src = "vscode/settings.json"
-dest = "$XDG_CONFIG_HOME/VSCodium/User/settings.json"
-[[components.entries]]
-src = "vscode/keybindings.json"
-dest = "$XDG_CONFIG_HOME/VSCodium/User/keybindings.json"
-[[components.entries]]
-src = "vscode/flags.conf"
-dest = "$XDG_CONFIG_HOME/codium-flags.conf"
-
-[[components]]
-name = "vscode"
-packages = ["code"]
-post_install = [
-    "code --install-extension $CAELESTIA_DOTS/vscode/caelestia-vscode-integration/caelestia-vscode-integration-*.vsix",
-]
-[[components.entries]]
-src = "vscode/settings.json"
-dest = "$XDG_CONFIG_HOME/Code/User/settings.json"
-[[components.entries]]
-src = "vscode/keybindings.json"
-dest = "$XDG_CONFIG_HOME/Code/User/keybindings.json"
-[[components.entries]]
-src = "vscode/flags.conf"
-dest = "$XDG_CONFIG_HOME/code-flags.conf"
-
-[[components]]
 name = "zed"
 packages = ["zed"]
 [[components.entries]]

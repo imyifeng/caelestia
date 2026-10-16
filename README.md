@@ -75,7 +75,6 @@ cp -r hypr/. $XDG_CONFIG_HOME/hypr/
 return {
   -- 修改默认应用：
   browser          = "chromium",       -- 将默认浏览器改为 Chromium
-  editor           = "code",           -- 将默认编辑器改为 Code
 
   -- 修改窗口/装饰属性：
   blurEnabled      = false,            -- 禁用窗口模糊
@@ -190,7 +189,7 @@ CLI 的配置文件（`~/.config/caelestia/cli.json`）可用来调整 CLI 的�
 | ---------------- | ------------------------------- |
 | `Super + T`      | 终端（默认：kitty）              |
 | `Super + W`      | 浏览器（默认：google-chrome-stable） |
-| `Super + C`      | 编辑器（默认：codium）          |
+| `Super + C`      | 编辑器（默认：zed）             |
 | `Super + E`      | 文件管理器（默认：thunar）      |
 | `Ctrl + Alt + V` | 音频设置（默认：pwvucontrol）   |
 

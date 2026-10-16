@@ -8,7 +8,7 @@ return {
     -- Apps
     terminal                   = "kitty",
     browser                    = "google-chrome-stable",
-    editor                     = "codium",
+    editor                     = "zed",
     fileExplorer               = "thunar",
     audioSettings              = "pwvucontrol",
 
