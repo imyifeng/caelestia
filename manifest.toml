@@ -23,21 +23,21 @@ src = "hypr"
 dest = "$XDG_CONFIG_HOME/hypr"
 
 [[components]]
-name = "fish"
+name = "zsh"
 default = true
-packages = ["fish", "eza", "zoxide", "direnv"]
+packages = ["zsh", "zsh-autosuggestions", "zsh-syntax-highlighting", "eza", "zoxide", "direnv"]
 post_install = [
     "mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/caelestia",
-    "touch ${XDG_CONFIG_HOME:-$HOME/.config}/caelestia/user-config.fish",
+    "touch ${XDG_CONFIG_HOME:-$HOME/.config}/caelestia/user-config.zsh",
 ]
 [[components.entries]]
-src = "fish"
-dest = "$XDG_CONFIG_HOME/fish"
+src = "zsh/.zshrc"
+dest = "$HOME/.zshrc"
 
 [[components]]
 name = "kitty"
 default = true
-packages = ["kitty", "fish", "ttf-maplemono-nf-cn"]
+packages = ["kitty", "ttf-maplemono-nf-cn"]
 [[components.entries]]
 src = "kitty"
 dest = "$XDG_CONFIG_HOME/kitty"

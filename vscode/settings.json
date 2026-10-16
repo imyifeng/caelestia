@@ -27,7 +27,7 @@
     "git.enableSmartCommit": true,
     "codeium.enableConfig": {
         "*": true,
-        "fish": true,
+        "zsh": true,
         "qml": true
     },
     "[c]": {

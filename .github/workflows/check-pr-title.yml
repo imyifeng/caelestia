@@ -24,7 +24,6 @@ jobs:
             btop
             chrome
             fastfetch
-            fish
             hypr
             kitty
             micro
@@ -34,6 +33,7 @@ jobs:
             uwsm
             vscode
             zed
+            zsh
 
             manifest
             packages

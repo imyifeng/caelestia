@@ -112,7 +112,7 @@ local function default_config()
             btop = {
                 enable  = true,
                 match   = { { class = "btop", title = "btop", workspace = { name = "special:sysmon" } } },
-                command = { "kitty", "--class", "btop", "--title", "btop", "fish", "-C", "exec btop" },
+                command = { "kitty", "--class", "btop", "--title", "btop", "zsh", "-c", "exec btop" },
             },
         },
         todo = {
