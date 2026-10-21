@@ -1,0 +1,15 @@
+btop
+chrome
+fastfetch
+hypr
+kitty
+micro
+spicetify
+starship
+thunar
+uwsm
+zed
+zsh
+
+manifest
+packages
