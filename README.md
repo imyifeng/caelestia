@@ -36,8 +36,8 @@
 ## 维护须知
 
 - **不要直接编辑 `~/.config/hypr/` 下的托管文件**——个人改动一律走 `hypr-vars.lua` / `hypr-user.lua`；确实要改托管默认值的，改仓库后重新安装
-- **Clash Party 双自启已修复**：uwsm 会话里 `xdg-desktop-autostart.target` 会和 `dex --autostart` 抢同一个 desktop 文件，双实例竞争导致开机不静默（second-instance 唤醒主窗口）且托盘注册失败。已 `systemctl --user mask 'app-mihomo\x2dparty@autostart.service'`（mask 优先级高于生成单元，应用内重写 desktop 文件也不受影响），dex 仍是唯一自启通道；两处需同步改动
-- 组件清单现状（可选组件只启用 zed / nvim，micro 为默认组件；spotify、discord、todoist 不使用）：`hypr, zsh, kitty, fastfetch, btop, micro, thunar, starship, chrome, gtk, qt, auth, network, bluetooth, pipewire, clipboard, fonts, tools, zed, nvim, uwsm`
+- **不要安装 uwsm（重要）**：旧机器是 SDDM 直启 Hyprland；装了 uwsm 后 SDDM 会话列表多出按字母序更靠前的 `hyprland-uwsm.desktop`，全新 SDDM 默认选中它，整个会话被 systemd 接管，`xdg-desktop-autostart.target` 会和 `dex --autostart` 抢同一个 desktop 文件——双实例竞争导致 Clash Party 开机不静默（second-instance 唤醒主窗口）且托盘注册失败。曾以 `systemctl --user mask 'app-mihomo\x2dparty@autostart.service'` 兜底（mask 优先级高于生成单元，应用内重写 desktop 文件也不受影响），现保留作保险；根治是卸载 uwsm，会话回到 SDDM 直启，dex 仍是唯一自启通道
+- 组件清单现状（可选组件只启用 zed / nvim，micro 为默认组件；spotify、discord、todoist、uwsm 不使用）：`hypr, zsh, kitty, fastfetch, btop, micro, thunar, starship, chrome, gtk, qt, auth, network, bluetooth, pipewire, clipboard, fonts, tools, zed, nvim`
 - **不要运行 `caelestia install` 重装 shell**——它按 manifest 装的是官方 AUR 包 `caelestia-shell`，会顶掉自编译的 `caelestia-shell-imyifeng`（含中文翻译）
 - 跟随上游：`git remote add upstream https://github.com/caelestia-dots/caelestia.git` 后 fetch/rebase，重点冲突区是 `manifest.toml` 与 `hypr/`；shell 仓库的翻译/打包维护见其 README
 
