@@ -36,7 +36,7 @@
 ## 维护须知
 
 - **不要直接编辑 `~/.config/hypr/` 下的托管文件**——个人改动一律走 `hypr-vars.lua` / `hypr-user.lua`；确实要改托管默认值的，改仓库后重新安装
-- 组件清单现状：`hypr, zsh, kitty, fastfetch, btop, micro, thunar, starship, chrome, gtk, qt, auth, network, bluetooth, pipewire, clipboard, fonts, tools, spotify, zed, nvim, discord, todoist, uwsm`
+- 组件清单现状（可选组件只启用 zed / nvim，micro 为默认组件；spotify、discord、todoist 不使用）：`hypr, zsh, kitty, fastfetch, btop, micro, thunar, starship, chrome, gtk, qt, auth, network, bluetooth, pipewire, clipboard, fonts, tools, zed, nvim, uwsm`
 - **不要运行 `caelestia install` 重装 shell**——它按 manifest 装的是官方 AUR 包 `caelestia-shell`，会顶掉自编译的 `caelestia-shell-imyifeng`（含中文翻译）
 - 跟随上游：`git remote add upstream https://github.com/caelestia-dots/caelestia.git` 后 fetch/rebase，重点冲突区是 `manifest.toml` 与 `hypr/`；shell 仓库的翻译/打包维护见其 README
 
