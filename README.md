@@ -25,7 +25,7 @@
 | 文件 | 作用 |
 | --- | --- |
 | `~/.config/caelestia/hypr-vars.lua` | 变量覆盖：`terminal = "kitty"`、`browser = "google-chrome-stable"`、`cursorTheme = "Bibata-Modern-Ice"` |
-| `~/.config/caelestia/hypr-user.lua` | 输入法环境变量（XMODIFIERS/QT_IM_MODULE/QT_IM_MODULES/SDL_IM_MODULE，**故意不含 GTK_IM_MODULE**，GTK 由 settings.ini 低优先级接管）；`hyprland.start` 时启动 `fcitx5 -d` 和 `dex --autostart` |
+| `~/.config/caelestia/hypr-user.lua` | 输入法环境变量（XMODIFIERS/QT_IM_MODULE/QT_IM_MODULES/SDL_IM_MODULE，**故意不含 GTK_IM_MODULE**，GTK 由 settings.ini 低优先级接管）；`hyprland.start` 时启动 `fcitx5 -d` 和 `dex --autostart`（dex 会先等 shell 托盘宿主 StatusNotifierWatcher 就绪，30s 兜底放行） |
 | `~/.config/caelestia/shell.json` | 透明度开关；`session.commands.logout = ["~/.config/caelestia/logout.sh"]`（见下） |
 | `~/.config/caelestia/cli.json` | sysmon btop 命令（kitty + zsh）；`wallpaper`/`theme` 的 postHook 指向 SDDM 同步脚本 |
 | `~/.config/caelestia/logout.sh` | 注销包装器（详见 shell 仓库 README 的"已知问题"） |
@@ -36,6 +36,7 @@
 ## 维护须知
 
 - **不要直接编辑 `~/.config/hypr/` 下的托管文件**——个人改动一律走 `hypr-vars.lua` / `hypr-user.lua`；确实要改托管默认值的，改仓库后重新安装
+- **Clash Party 双自启已修复**：uwsm 会话里 `xdg-desktop-autostart.target` 会和 `dex --autostart` 抢同一个 desktop 文件，双实例竞争导致开机不静默（second-instance 唤醒主窗口）且托盘注册失败。已 `systemctl --user mask 'app-mihomo\x2dparty@autostart.service'`（mask 优先级高于生成单元，应用内重写 desktop 文件也不受影响），dex 仍是唯一自启通道；两处需同步改动
 - 组件清单现状（可选组件只启用 zed / nvim，micro 为默认组件；spotify、discord、todoist 不使用）：`hypr, zsh, kitty, fastfetch, btop, micro, thunar, starship, chrome, gtk, qt, auth, network, bluetooth, pipewire, clipboard, fonts, tools, zed, nvim, uwsm`
 - **不要运行 `caelestia install` 重装 shell**——它按 manifest 装的是官方 AUR 包 `caelestia-shell`，会顶掉自编译的 `caelestia-shell-imyifeng`（含中文翻译）
 - 跟随上游：`git remote add upstream https://github.com/caelestia-dots/caelestia.git` 后 fetch/rebase，重点冲突区是 `manifest.toml` 与 `hypr/`；shell 仓库的翻译/打包维护见其 README
