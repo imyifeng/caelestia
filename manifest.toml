@@ -80,9 +80,7 @@ dest = "$XDG_CONFIG_HOME/Thunar"
 name = "starship"
 default = true
 packages = ["starship"]
-[[components.entries]]
-src = "starship.toml"
-dest = "$XDG_CONFIG_HOME/starship.toml"
+# 不部署 starship.toml：用 starship 默认配置（zshrc 里 starship init 引用其二进制）
 
 [[components]]
 name = "chrome"

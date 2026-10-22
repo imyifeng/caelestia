@@ -14,6 +14,7 @@
 | Shell | fish | **zsh**（配置 [zsh/.zshrc](/zsh/.zshrc)，末尾加载 `~/.config/caelestia/user-config.zsh`） | `manifest.toml`（组件 `zsh`，安装到 `~/.zshrc`） |
 | 浏览器 | firefox + zen | **google-chrome**（无主题集成，外观走 GTK 跟随配色） | `manifest.toml`（组件 `chrome`）、`hypr/variables.lua` |
 | 编辑器 | vscode/vscodium/zed/nvim | 仅 **zed / nvim / micro**（vscode 全套及 Caelestia 集成扩展已删除） | `manifest.toml`、`hypr/variables.lua`（`editor = "zeditor"`，注意二进制名是 zeditor 不是 zed） |
+| 提示符 | starship + caelestia 主题 | **starship 默认配置**（组件仅装包，`zshrc` 仍 `starship init`，不再部署 `starship.toml`） | `manifest.toml`（组件 `starship`） |
 | 文档 | 英文 | 全部汉化 | 各 `README.md`、`.github/` |
 
 未改动但值得知道的：Hyprland 光标默认 `sweet-cursors`（未安装），实际用 `Bibata-Modern-Ice`——通过用户覆盖文件设置（见下），仓库默认值保持上游以减轻同步压力。
