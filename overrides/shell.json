@@ -1,0 +1,12 @@
+{
+    "appearance": {
+        "transparency": {
+            "enabled": true
+        }
+    },
+    "session": {
+        "commands": {
+            "logout": ["/home/yifeng/.config/caelestia/logout.sh"]
+        }
+    }
+}

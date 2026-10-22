@@ -1,0 +1,21 @@
+{
+    "dots": {
+        "url": "https://github.com/imyifeng/caelestia.git",
+        "branch": "main"
+    },
+    "toggles": {
+        "sysmon": {
+            "btop": {
+                "enable": true,
+                "match": [{ "class": "btop", "title": "btop", "workspace": { "name": "special:sysmon" } }],
+                "command": ["kitty", "--class", "btop", "--title", "btop", "zsh", "-c", "exec btop"]
+            }
+        }
+    },
+    "wallpaper": {
+        "postHook": "sudo /usr/share/sddm/themes/caelestia/scripts/sync.sh --posthook"
+    },
+    "theme": {
+        "postHook": "sudo /usr/share/sddm/themes/caelestia/scripts/sync.sh --posthook"
+    }
+}

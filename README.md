@@ -4,7 +4,15 @@
 
 # caelestia（魔改版 dotfiles）
 
-基于 Caelestia dotfiles 的个人配置。安装仍通过 `caelestia` CLI：`paru -S caelestia-cli && caelestia install`，按 [manifest.toml](/manifest.toml) 中的组件清单复制文件、安装软件包。
+基于 Caelestia dotfiles 的个人配置。**全新 Arch/CachyOS 复现**：
+
+```sh
+sudo pacman -S --needed git
+git clone https://github.com/imyifeng/caelestia.git ~/Projects/caelestia/caelestia
+cd ~/Projects/caelestia/caelestia && ./bootstrap.sh [--sddm]
+```
+
+[bootstrap.sh](/bootstrap.sh) 会装 paru、把 [overrides/](/overrides/) 里的用户覆盖文件部署到位（其中 `cli.json` 的 `dots.url` 让 `caelestia` CLI 从本 fork 拉 dots——必须在首次 install 前就位）、构建安装 [caelestia-shell-imyifeng](https://github.com/imyifeng/caelestia-shell)，最后跑 `caelestia install` 按 [manifest.toml](/manifest.toml) 部署配置并装齐全部依赖包。
 
 ## 与上游的差异（魔改清单）
 
@@ -21,7 +29,7 @@
 
 ## 仓库外的用户配置（系统最终形态的一半在这里）
 
-魔改遵循一个原则：**能放用户覆盖文件的就不改仓库源码**（上游同步零冲突）。以下文件不在仓库中，但属于配置的组成部分，新环境需手动恢复：
+魔改遵循一个原则：**能放用户覆盖文件的就不改仓库源码**（上游同步零冲突）。这些文件已收编进 [overrides/](/overrides/)，由 `bootstrap.sh` 部署（目标路径与作用如下；重复运行时自动备份既有文件）：
 
 | 文件 | 作用 |
 | --- | --- |
@@ -38,7 +46,7 @@
 
 - **不要直接编辑 `~/.config/hypr/` 下的托管文件**——个人改动一律走 `hypr-vars.lua` / `hypr-user.lua`；确实要改托管默认值的，改仓库后重新安装
 - **不要安装 uwsm（重要）**：旧机器是 SDDM 直启 Hyprland；装了 uwsm 后 SDDM 会话列表多出按字母序更靠前的 `hyprland-uwsm.desktop`，全新 SDDM 默认选中它，整个会话被 systemd 接管，`xdg-desktop-autostart.target` 会和 `dex --autostart` 抢同一个 desktop 文件——双实例竞争导致 Clash Party 开机不静默（second-instance 唤醒主窗口）且托盘注册失败。曾以 `systemctl --user mask 'app-mihomo\x2dparty@autostart.service'` 兜底（mask 优先级高于生成单元，应用内重写 desktop 文件也不受影响），现保留作保险；根治是卸载 uwsm，会话回到 SDDM 直启，dex 仍是唯一自启通道
-- 组件清单现状（可选组件只启用 zed / nvim，micro 为默认组件；spotify、discord、todoist、uwsm 不使用）：`hypr, zsh, kitty, fastfetch, btop, micro, thunar, starship, chrome, gtk, qt, auth, network, bluetooth, pipewire, clipboard, fonts, tools, zed, nvim`
+- 组件清单现状（可选组件只启用 zed / nvim，micro 为默认组件；spotify、discord、todoist、uwsm 不使用）：`hypr, ime, extras, zsh, kitty, fastfetch, btop, micro, thunar, starship, chrome, gtk, qt, auth, network, bluetooth, pipewire, clipboard, fonts, tools, zed, nvim`。其中 `ime`（fcitx5 套件 + rime）和 `extras`（dex、hyprshutdown、bibata-cursor-theme-bin）是本 fork 新增的用户层依赖组件
 - **不要运行 `caelestia install` 重装 shell**——它按 manifest 装的是官方 AUR 包 `caelestia-shell`，会顶掉自编译的 `caelestia-shell-imyifeng`（含中文翻译）
 - 跟随上游：`git remote add upstream https://github.com/caelestia-dots/caelestia.git` 后 fetch/rebase，重点冲突区是 `manifest.toml` 与 `hypr/`；shell 仓库的翻译/打包维护见其 README
 

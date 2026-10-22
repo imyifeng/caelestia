@@ -22,6 +22,18 @@ post_update = ["hyprctl reload >/dev/null"]
 src = "hypr"
 dest = "$XDG_CONFIG_HOME/hypr"
 
+# 用户层依赖（上游不含）：hypr-user.lua 自启 fcitx5/dex，logout.sh 依赖 hyprshutdown，
+# hypr-vars.lua 设置 Bibata 光标
+[[components]]
+name = "ime"
+default = true
+packages = ["fcitx5", "fcitx5-configtool", "fcitx5-qt", "fcitx5-gtk", "fcitx5-rime"]
+
+[[components]]
+name = "extras"
+default = true
+packages = ["dex", "hyprshutdown", "bibata-cursor-theme-bin"]
+
 [[components]]
 name = "zsh"
 default = true
