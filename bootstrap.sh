@@ -77,6 +77,7 @@ fi
 log "构建 caelestia-shell-imyifeng（makepkg -s 自动补齐仓库依赖）"
 (cd "$SHELL_DIR" && git pull --ff-only || true)
 rm -rf "$SHELL_DIR/aur/src" "$SHELL_DIR/aur/pkg"
+rm -f "$SHELL_DIR"/aur/caelestia-shell-imyifeng-*.pkg.tar.zst
 (cd "$SHELL_DIR/aur" && makepkg -sf --noconfirm)
 
 log "安装 caelestia-shell-imyifeng（提示与官方 caelestia-shell 冲突时选 yes 替换）"
